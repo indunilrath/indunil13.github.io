@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High Important Personal Info</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#8b0000,#ff0000);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+}
+
+.security-box{
+  width:90%;
+  max-width:380px;
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(14px);
+  border-radius:20px;
+  padding:35px;
+  box-shadow:0 25px 50px rgba(0,0,0,.6);
+  text-align:center;
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.security-box h1{
+  font-size:1.8rem;
+  margin-bottom:10px;
+}
+
+.security-box p{
+  font-size:.9rem;
+  opacity:.85;
+  margin-bottom:25px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  outline:none;
+  margin-bottom:20px;
+  font-size:1rem;
+  text-align:center;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff4b2b,#ff0000);
+  color:#fff;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(255,0,0,.6);
+}
+
+.error{
+  color:#ffb3b3;
+  font-size:.85rem;
+  margin-top:15px;
+  display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="security-box">
+  <h1>⚠️ High Important Access</h1>
+  <p>Enter your Code and Password</p>
+
+  <input type="text" id="hipiCode" placeholder="Code (e.g., XXXXXX)">
+  <input type="password" id="hipiPass" placeholder="Password (XXXXXX)">
+  <button onclick="checkHIPI()">Access</button>
+
+  <div class="error" id="error">❌ Incorrect Code or Password</div>
+</div>
+
+<script>
+function checkHIPI(){
+  const code = document.getElementById("hipiCode").value.trim();
+  const pass = document.getElementById("hipiPass").value.trim();
+
+  if(code === "n.INDUNIL2009" && pass === "20091113"){
+    alert("✅ Access Granted");
+    // You can show content directly or redirect to real HIPI page
+    window.location.href = "hipi_content.html"; // create this page for actual info
+  }else{
+    document.getElementById("error").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>

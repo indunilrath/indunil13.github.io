@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High Security Personal Info</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffafbd,#ffc3a0);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  overflow:hidden;
+}
+
+.security-box{
+  width:90%;
+  max-width:400px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  border-radius:25px;
+  padding:35px;
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+  text-align:center;
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.security-box h1{
+  font-size:1.8rem;
+  margin-bottom:10px;
+}
+
+.security-box p{
+  font-size:.95rem;
+  opacity:.85;
+  margin-bottom:25px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  outline:none;
+  margin-bottom:20px;
+  font-size:1rem;
+  text-align:center;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff5f6d,#ffc371);
+  color:#fff;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(255,95,109,.6);
+}
+
+.error{
+  color:#ffb3b3;
+  font-size:.85rem;
+  margin-top:15px;
+  display:none;
+}
+
+.info-card{
+  display:none;
+  width:95%;
+  max-width:500px;
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(14px);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+  animation:fadeIn 1s ease;
+}
+
+.info-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff;
+  margin-bottom:15px;
+}
+
+.info-card h2{
+  font-size:1.7rem;
+  margin-bottom:5px;
+}
+
+.info-card .info{
+  background:rgba(0,0,0,.3);
+  padding:12px 15px;
+  border-radius:12px;
+  margin-bottom:10px;
+  font-size:.95rem;
+}
+
+.fade-black{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 1s;
+  z-index:9999;
+}
+</style>
+</head>
+<body>
+
+<!-- Password Box -->
+<div class="security-box" id="securityBox">
+  <h1>🔒 High Security Access</h1>
+  <p>Enter password to view personal information</p>
+  <input type="password" id="pass" placeholder="Enter Password">
+  <button onclick="checkPass()">Access</button>
+  <div class="error" id="error">❌ Incorrect Password</div>
+</div>
+
+<!-- Personal Info Card -->
+<div class="info-card" id="infoCard">
+  <img src="profile.jpg" alt="Profile Image">
+  <h2>D M E G P Oshadhi Dissanayake</h2>
+  <div class="info"><strong>School ID:</strong> 18977</div>
+  <div class="info"><strong>Address:</strong> Udawatte</div>
+  <div class="info"><strong>Date of Birth:</strong> 2009-11-13</div>
+  <div class="info"><strong>Status:</strong> Girlfriend</div>
+</div>
+
+<div class="fade-black" id="fadeBlack"></div>
+
+<script>
+function checkPass(){
+  const password = document.getElementById("pass").value.trim();
+  const error = document.getElementById("error");
+  const box = document.getElementById("securityBox");
+  const info = document.getElementById("infoCard");
+
+  if(password === "OSH-2009"){
+    // Show info
+    box.style.display = "none";
+    info.style.display = "block";
+
+    // Start 7-second timer
+    setTimeout(() => {
+      document.getElementById("fadeBlack").style.opacity = "1";
+      setTimeout(() => {
+        window.location.href = "hipilock.html"; // redirect to home page
+      }, 1000); // fade duration 1s
+    }, 7000);
+  } else {
+    error.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>

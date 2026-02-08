@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Information | Secure</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#5a0000,#b30000);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  padding:20px;
+}
+
+.info-card{
+  width:95%;
+  max-width:720px;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(16px);
+  border-radius:25px;
+  padding:35px;
+  box-shadow:0 30px 60px rgba(0,0,0,.6);
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.profile{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.profile img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #ffb3b3;
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+.profile h1{
+  margin-top:15px;
+  font-size:1.9rem;
+}
+
+.profile span{
+  font-size:.9rem;
+  opacity:.85;
+}
+
+.section-title{
+  margin:25px 0 15px;
+  font-size:1.2rem;
+  color:#ffd6d6;
+}
+
+.info{
+  background:rgba(0,0,0,.35);
+  padding:14px 18px;
+  border-radius:14px;
+  margin-bottom:12px;
+  font-size:.95rem;
+}
+
+.info strong{
+  color:#ffcccc;
+}
+
+/* Buttons */
+.logout, .hipi-btn{
+  display:block;
+  margin:20px auto 0;
+  text-align:center;
+  text-decoration:none;
+  padding:13px 40px;
+  border-radius:35px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.logout{
+  background:linear-gradient(135deg,#ff4b2b,#ff0000);
+  color:#fff;
+}
+
+.logout:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(255,0,0,.6);
+}
+
+.hipi-btn{
+  background:linear-gradient(135deg,#ff0000,#8b0000);
+  color:#fff;
+}
+
+.hipi-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(255,0,0,.6);
+}
+
+/* Google Map */
+.map{
+  margin-top:20px;
+  border-radius:18px;
+  overflow:hidden;
+  border:2px solid rgba(255,255,255,.2);
+}
+
+.map iframe{
+  width:100%;
+  height:220px;
+  border:none;
+}
+</style>
+</head>
+<body>
+
+<div class="info-card">
+
+  <!-- Profile -->
+  <div class="profile">
+    <img src="profile.jpg" alt="Profile Image">
+    <h1>R.M.N. Indunil Rathnayake</h1>
+    <span>Student | Poramadulla Central College</span>
+  </div>
+
+  <!-- Personal Info -->
+  <div class="section-title">Personal Information</div>
+  <div class="info"><strong>Date of Birth:</strong> 2009-07-22 (Kandy)</div>
+  <div class="info"><strong>Status:</strong> Student</div>
+  <div class="info"><strong>School:</strong> Poramadulla Central College</div>
+  <div class="info"><strong>School ID:</strong> 19087</div>
+
+  <!-- Contact Info -->
+  <div class="section-title">Contact Details</div>
+  <div class="info"><strong>Email:</strong> n.indunilrathnayake@gmail.com</div>
+  <div class="info"><strong>Contact:</strong> 071 574 4366</div>
+
+  <!-- Family Info -->
+  <div class="section-title">Family Information</div>
+  <div class="info"><strong>Mother:</strong> H P M I Upamali Kumari (1986-01-12)</div>
+  <div class="info"><strong>Father:</strong> R M J Rathnayake (1977-12-13)</div>
+  <div class="info"><strong>Sister:</strong> R M K Sathsarani Rathnayake (2012-10-23)</div>
+
+  <!-- Location -->
+  <div class="section-title">Location</div>
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps?q=4QMG+PW2,+Peradeniya-Deltota-Rikiligaskada+Rd,+Poramadulla&output=embed" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- Buttons -->
+  <a href="home.html" class="logout">Logout</a>
+  <a href="hipilock.html" class="hipi-btn">Access High Important Personal Info</a>
+
+</div>
+
+</body>
+</html>
